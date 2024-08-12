@@ -48,11 +48,68 @@ accOutPut.forEach((element) => {
 });
 
 /* Opgave teaminfo */
-let teamImg = [
-  "https://picsum.photos/300/300?random=1 ",
-  "https://picsum.photos/300/300?random=2 ",
-  "https://picsum.photos/300/300?random=3 ",
-  "https://picsum.photos/300/300?random=4 ",
-  "https://picsum.photos/300/300?random=5 ",
-  "https://picsum.photos/300/300?random=6 ",
+let team = document.querySelector(".team");
+
+let profile = [
+  {
+    profileImg: "https://picsum.photos/300/300?random=1 ",
+    teamName: "Jens Hansen",
+    teamUsername: "jhansen1963",
+    teamMail: "jenshansen@gmail.com",
+    teamWebsiteBtn: "Se website",
+  },
+
+  {
+    profileImg: "https://picsum.photos/300/300?random=2 ",
+    teamName: "Julie Hansen",
+    teamUsername: "jhansen1963",
+    teamMail: "juliehansen@gmail.com",
+    teamWebsiteBtn: "Se website",
+  },
+
+  {
+    profileImg: "https://picsum.photos/300/300?random=3 ",
+    teamName: "Mogens Hansen",
+    teamUsername: "mhansen1963",
+    teamMail: "mogenshansen@gmail.com",
+    teamWebsiteBtn: "Se website",
+  },
+
+  {
+    profileImg: "https://picsum.photos/300/300?random=4 ",
+    teamName: "Karl Hansen",
+    teamUsername: "khansen1963",
+    teamMail: "karlhansen@gmail.com",
+    teamWebsiteBtn: "Se website",
+  },
+
+  {
+    profileImg: "https://picsum.photos/300/300?random=5 ",
+    teamName: "Emilie Hansen",
+    teamUsername: "ehansen1963",
+    teamMail: "emiliehansen@gmail.com",
+    teamWebsiteBtn: "Se website",
+  },
+
+  {
+    profileImg: "https://picsum.photos/300/300?random=6 ",
+    teamName: "Josefine Hansen",
+    teamUsername: "jhansen1963",
+    teamMail: "josefinehansen@gmail.com",
+    teamWebsiteBtn: "Se website",
+  },
 ];
+
+profile.forEach((element) => {
+  team.innerHTML += `  
+  <section class="team">
+    <div class="team-profile">
+        <div class="team-header"><div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
+        <div class="team-name"><p> ${element.teamName}</p></div>
+        <div class="team-username"><p> ${element.teamUsername}</p></div>
+        <div class="team-mail"><p> ${element.teamMail}</p></div>
+        <div class="team-website-btn"><a href="#"> ${element.teamWebsiteBtn}</a></div>
+      </div>
+      </section>
+ `;
+});
