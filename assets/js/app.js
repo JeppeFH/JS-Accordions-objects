@@ -31,8 +31,6 @@ accordions.forEach((element) => {
  `;
 });
 
-console.log(accordions);
-
 /*
 ----- Funktionalitet (åbn & lukke): -----
 - Hver accordion har class'en .accordion. gem dem ned i en variabel ( brug querySelectorAll), og foreach over dem, så hver enkel kan trykkes på
@@ -48,3 +46,13 @@ accOutPut.forEach((element) => {
     event.currentTarget.classList.toggle("active");
   });
 });
+
+/* Opgave teaminfo */
+let teamImg = [
+  "https://picsum.photos/300/300?random=1 ",
+  "https://picsum.photos/300/300?random=2 ",
+  "https://picsum.photos/300/300?random=3 ",
+  "https://picsum.photos/300/300?random=4 ",
+  "https://picsum.photos/300/300?random=5 ",
+  "https://picsum.photos/300/300?random=6 ",
+];
