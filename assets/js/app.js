@@ -1,25 +1,50 @@
 /*Navigation*/
-let burgerMenuOpen = document.querySelector(".burgerMenuOpen");
-let burgerMenuClose = document.querySelector(".burgerMenuClose");
-let navLinks = document.querySelector(".nav-links");
-/*Let = En literal der bruges til at deklarere en variabel.*/
-/*document = kobler det til ens html */
-/*querySelector =  Søger efter elementer i dokumentet, 
-der har class eller id*/
+/* 
 
-burgerMenuOpen.addEventListener("click", () => {
-  /*Fortæller at der skal være en Click event listener på array'en*/
-  navLinks.classList.add("active");
-  burgerMenuOpen.classList.add("active");
-  burgerMenuClose.classList.add("active");
-  /*Laver en classList på arrays for at manipulere class samtidig 
-  en add("active") på for så at kunne manipulere class i css. */
+----- Udskriv acoordions via JS: -----
+- lav et array med objekter (et objekt for hver accordion)
+    - Hvert object skal have følgende keys: title og bodytext 
+
+- for at få dem udskrevet, skal der forEach'es over array'et med objekter
+- i forEach'en udskrives html'en hver accordion (inde i ``)  */
+
+let headline = document.querySelector(".accordion");
+let bodytext = document.querySelector(".panel");
+
+let container = document.querySelector(".container");
+
+let accordions = [
+  { title: "Overskrift 1", bodytext: "Brødtekst 1" },
+  { title: "Overskrift 2", bodytext: "Brødtekst 2" },
+  { title: "Overskrift 3", bodytext: "Brødtekst 3" },
+];
+
+accordions.forEach((element) => {
+  container.innerHTML += `  
+  <div class="accordion"> 
+    <p> ${element.title}</p>
+      <div class="panel">
+      <p> ${element.bodytext}</p>
+      </div>
+    </div>
+
+ `;
 });
 
-burgerMenuClose.addEventListener("click", () => {
-  navLinks.classList.remove("active");
-  burgerMenuOpen.classList.remove("active");
-  burgerMenuClose.classList.remove("active");
-  /*Laver et click event på burgermenuclose som remover active class ved 
-  click. */
+console.log(accordions);
+
+/*
+----- Funktionalitet (åbn & lukke): -----
+- Hver accordion har class'en .accordion. gem dem ned i en variabel ( brug querySelectorAll), og foreach over dem, så hver enkel kan trykkes på
+    - brug e.currentTarget
+- husk 'classList.toggle' istedet for 'add'
+*/
+
+/*Accordians, funktionalitet*/
+const accOutPut = document.querySelectorAll(".accordion");
+
+accOutPut.forEach((element) => {
+  element.addEventListener("click", (event) => {
+    event.currentTarget.classList.toggle("active");
+  });
 });
