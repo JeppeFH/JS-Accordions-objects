@@ -54,6 +54,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=1 ",
     teamName: "Jens Hansen",
+    teamGender: male,
     teamUsername: "jhansen1963",
     teamMail: "jenshansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -62,6 +63,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=2 ",
     teamName: "Julie Hansen",
+    teamGender: female,
     teamUsername: "jhansen1963",
     teamMail: "juliehansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -70,6 +72,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=3 ",
     teamName: "Mogens Hansen",
+    teamGender: male,
     teamUsername: "mhansen1963",
     teamMail: "mogenshansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -78,6 +81,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=4 ",
     teamName: "Karl Hansen",
+    teamGender: male,
     teamUsername: "khansen1963",
     teamMail: "karlhansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -86,6 +90,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=5 ",
     teamName: "Emilie Hansen",
+    teamGender: female,
     teamUsername: "ehansen1963",
     teamMail: "emiliehansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -94,6 +99,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=6 ",
     teamName: "Josefine Hansen",
+    teamGender: "female",
     teamUsername: "jhansen1963",
     teamMail: "josefinehansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -103,8 +109,9 @@ let profile = [
 profile.forEach((element) => {
   team.innerHTML += `  
   <section class="team">
-    <div class="team-profile">
-        <div class="team-header"><div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
+    <div class="team-profile ${element.teamGender}">
+        <div class="team-header">
+        <div class="team-img"><img src="${element.profileImg}" alt=""> </div></div>
         <div class="team-name"><p> ${element.teamName}</p></div>
         <div class="team-username"><p> ${element.teamUsername}</p></div>
         <div class="team-mail"><p> ${element.teamMail}</p></div>
@@ -113,3 +120,5 @@ profile.forEach((element) => {
       </section>
  `;
 });
+
+let teamImg = document.querySelectorAll(".team-img");
