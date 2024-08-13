@@ -54,7 +54,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=1 ",
     teamName: "Jens Hansen",
-    teamGender: male,
+    teamGender: "male",
     teamUsername: "jhansen1963",
     teamMail: "jenshansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -63,7 +63,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=2 ",
     teamName: "Julie Hansen",
-    teamGender: female,
+    teamGender: "female",
     teamUsername: "jhansen1963",
     teamMail: "juliehansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -72,7 +72,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=3 ",
     teamName: "Mogens Hansen",
-    teamGender: male,
+    teamGender: "male",
     teamUsername: "mhansen1963",
     teamMail: "mogenshansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -81,7 +81,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=4 ",
     teamName: "Karl Hansen",
-    teamGender: male,
+    teamGender: "male",
     teamUsername: "khansen1963",
     teamMail: "karlhansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -90,7 +90,7 @@ let profile = [
   {
     profileImg: "https://picsum.photos/300/300?random=5 ",
     teamName: "Emilie Hansen",
-    teamGender: female,
+    teamGender: "female",
     teamUsername: "ehansen1963",
     teamMail: "emiliehansen@gmail.com",
     teamWebsiteBtn: "Se website",
@@ -121,4 +121,25 @@ profile.forEach((element) => {
  `;
 });
 
+/*Navne i alfabetisk rækkefølge*/
+let sortedTeamName = profile.sort();
+
+sortedTeamName.map((element) => {
+  team.innerHTML += `
+    
+     <div class="team-name"><p> ${element.teamName}</p></div>
+    
+    
+    `;
+});
+
+/* Farvesortering af køn */
 let teamImg = document.querySelectorAll(".team-img");
+
+profile.forEach((team, index) => {
+  if (team.teamGender === "male") {
+    teamImg[index].style.border = "solid 4px lightblue";
+  } else if (team.teamGender === "female") {
+    teamImg[index].style.border = "solid 4px pink";
+  }
+});
